@@ -11,7 +11,7 @@ class Result extends StatelessWidget {
     } else if (totalScore <= 15) {
       resultText = 'You are good';
     } else if (totalScore <= 20) {
-      resultText = 'You are ...starnge';
+      resultText = 'You are starnge :\(';
     } else {
       resultText = 'You are so bad, sudhar jao!!';
     }
@@ -24,15 +24,21 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             resultPhrase,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
-          TextButton(onPressed: resetQuiz, child: Text('Reset Quiz'))
+          TextButton(
+              onPressed: resetQuiz,
+              child: Text(
+                'Reset Quiz',
+                style: TextStyle(fontSize: 18),
+              ))
         ],
       ),
     );
